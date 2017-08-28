@@ -1,1 +1,82 @@
-# html
+/*页面初始化*/
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: #fff;
+}
+ul,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+
+/******************公共样式***************************/
+
+.content{
+	width: 90%;
+	max-width: 750px;
+	margin: 0 auto;
+}
+.float-l{
+	float: left;
+}
+.float-r{
+	float: right;
+}
+.float-c{
+	clear: both;
+}
+
+/*******************页面样式****************************/
+.header{
+	text-align: center;
+	background-color: #1abc9c;
+	border: 1px solid #16a085;
+}
+.photo{
+	width:  155px;
+	height: 155px;
+	margin: 20px auto;
+}
+.photo>img{
+	width: 155px;
+	height: 155px;
+	border-radius: 155px;
+}
+.header>p{
+	text-align: center;
+	color: #fff;
+	margin-top:20px ;
+	
+}
+
+.header>ul{
+	margin: 20px 0;
+	display: inline-block;
+	overflow: hidden;
+	transform: translateX(-20px);
+}
+.header>ul>li{
+	margin-left: 20px;
+	color: #fff;
+}
+.mainBody{
+	text-align: center;
+}
+.mainBody>h3{
+	margin: 20px auto;
+}
+.mainBody>p{
+	max-width: 600px;
+	margin: 20px auto;
+}
+
+.footer{
+	background-color: #2f2f2f;
+	text-align: center;
+	margin-top: 50px;
+	color: white;
+}
