@@ -1,43 +1,173 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>简历</title>
-		<link rel="stylesheet" type="text/css" href="css/main.css"/>
-	</head>
-	<body class="content">
-	 <div class="header">
-	 	<div class="photo">
-	 		<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2003988139,3010807873&fm=117&gp=0.jpg" />
-	 	</div>
-	 	<p>枪在手，向前走，前端路上不回头</p>
-	 	<ul>
-	 		<li class="float-l"><a href="">工作</a></li>
-	 		<li class="float-l"><a href="">关于</a></li>
-	 		<li class="float-l"><a href="">博客</a></li>
-	 		<li class="float-l"><a href="">联系</a></li>
-	 	</ul>
-	 </div>
-	 <div class="mainBody">
-	 	<h3>嗨，我是裴纬华！</h3>
-	 	<p>大家好。我是裴纬华，由H5编码的一个免费英俊个人主页。
-	 	     一个真正简单的主页，想要展示他们的工作与可爱和干净的风格。
-	 	     请考虑关注我的主页，以获取我最新的消息。
-	 	     像往常一样，你可以在任何项目中使用我主页里的代码。与你的朋友分享
-	 	</p>
-	 	<ul>
-	 		<li ><a href="http://www.2144.cn/flash/63834.htm"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504569906&di=d508dc9e2963451f729bb5879db5247a&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.520apk.com%2Fold%2Fnews%2F20140801%2F14068495756721.jpg"/></a></li>
-	 		<li ><a href="http://search.2144.cn/index.php?keywords=%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8"><img style="width: 480px;height: 320px;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504569952&di=bb608dd7051f960e6b3d089a10de93df&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.91danji.com%2Fupload%2F20121128%2F20121128154854808.jpg"></a></li>
-	 		<li ><a href="http://search.2144.cn/index.php?keywords=%E8%B4%AA%E5%90%83%E8%9B%87"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=930360927,209525675&fm=26&gp=0.jpg>"</a></li>
-	 	</ul>
-	 </div>
-	 
-	 <div class="footer">
-	 	<p>GitHub个人主页：github.io.peiweihua/html/</p>
-	 	<p>手机： 15210990953</p>
-		<p>邮箱：970396358@qq.com</p>
-		<p>地址：石景山首钢工学院</p>
 
-	 </div>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<style>
+			body {
+				text-align: center;
+			}
+			
+			canvas {
+				width: 800px;
+				height: 600px;
+				border: 1px solid #000;
+			}
+			
+			div {
+				display: inline-block;
+			}
+			
+			input {
+				display: none;
+			}
+			
+			label {
+				color: #000;
+				display: inline-block;
+				padding: 6px 12px;
+				border: 1px solid #000;
+				border-radius: 4px;
+				margin-left: 10px;
+			}
+			
+			input[value='#000']+label {
+				color: : #000;
+				border-color: #000;
+				background-color: #fff;
+			}
+			
+			input[value='#f00']+label {
+				color: : #f00;
+				border-color: #f00;
+				background-color: #fff;
+			}
+			
+			input[value='#0f0']+label {
+				color: : #0f0;
+				border-color: #0f0;
+				background-color: #fff;
+			}
+			
+			input[value='#00f']+label {
+				color: : #00f;
+				border-color: #00f;
+				background-color: #fff;
+			}
+			
+			input[value='#000']:checked+lable {
+				background-color: #000;
+				color: #fff;
+			}
+			
+			input[value='#f00']:checked+lable {
+				background-color: #f00;
+				color: #fff;
+			}
+			
+			input[value='#0f0']:checked+lable {
+				background-color: #0f0;
+				color: #fff;
+			}
+			
+			input[value='#00f']:checked+lable {
+				background-color: #00f;
+				color: #fff;
+			}
+			input:checked+label{
+				background-color: #000;
+				color: #fff;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<canvas id="draw" width="800px" height="600px">您的浏览器不支持canvas标签</canvas>
+		<br />
+		<div id="color">
+			<input type="radio" name="color" id="color5" value="#fff" />
+			<label for="color5">橡皮</label>
+			<input type="radio" name="color" id="color1" value="#000" checked="checked" />
+			<label for="color1">黑色</label>
+			<input type="radio" name="color" id="color2" value="#f00" />
+			<label for="color2">红色</label>
+			<input type="radio" name="color" id="color3" value="#0f0" />
+			<label for="color3">绿色</label>
+			<input type="radio" name="color" id="color4" value="#00f" />
+			<label for="color4">蓝色</label>
+		</div>
+		<div id="size">
+			<input type="radio" name="size" id="size1" value="15" />
+			<label for="size1">加粗</label>
+			<input type="radio" name="size" id="size2" value="10" />
+			<label for="size2">正常</label>
+			<input type="radio" name="size" id="size3" value="5" />
+			<label for="size3">特细</label>
+		</div>
+
 	</body>
+	<script type="text/javascript">
+	(function(document){
+		var canvas = document.getElementById('draw');
+		var ctx = canvas.getContext('2d');
+		var tablet = new Tablet({
+			canvas:canvas,
+			ctx:ctx,
+			size:10,
+			color:'#000'
+		});
+		canvas.addEventListener('mousedown',function(e){
+			tablet.isDown = true;
+			ctx.beginPath();
+		});
+		canvas.addEventListener('mousemove',function(e){
+			tablet.drawLine(e.offsetX,e.offsetY);
+		});
+		canvas.addEventListener('mouseup',function(e){
+			tablet.isDown = false;
+		});
+		document.addEventListener('mouseup',function(e){
+			if(e.target.nodeName!=='CANVAS'){
+				ctx.closePath();
+				tablet.isDown = false;
+			}
+		});
+		document.getElementById('color').addEventListener('click',function(e){
+			if(e.target.name === 'color'){
+				tablet.color = e.target.value;
+			}
+		});
+		document.getElementById('size').addEventListener('click',function(e){
+			if(e.target.name === 'size'){
+				tablet.lineWidth = e.target.value;
+			}
+		});
+		function Tablet(obj){
+			if(!obj.canvas){
+				alert('画板没有传进来！');
+				return;
+			}
+			this.canvas = obj.canvas;
+			this.ctx = obj.ctx||obj.canvas.getContext('2d');
+			this.lineWidth = obj.size ||10;
+			this.color =obj.color || '#000';
+			this.isDown = obj.Down||false;
+			this.drawLine = function(x,y){
+				if(this.isDown){
+					this.ctx.lineWidth = this.lineWidth;
+					this.ctx.strokeStyle = this.color;
+					this.ctx.lineCap = 'round';
+					this.ctx.lineJoin = 'round';
+					this.ctx.lineTo(x,y);
+					this.ctx.stroke();
+					
+				}
+			}
+		}
+	})(document);
+	</script>
+
 </html>
