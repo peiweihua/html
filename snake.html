@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<!--游戏地图-->
+		<!--<div id="map">-->
+			<!--食物-->
+			<!--<div id="food"></div>-->
+			<!--蛇头-->
+			<!--<div id="snake"></div>-->
+		<!--</div>-->
+	</body>
+	<script type="text/javascript">
+		//行
+		var row = 30;
+		//列
+		var col = 40;
+		//边长
+		var wh = 20;
+		//定时器
+		var timer = 0;
+		//[空对象，Y轴，X轴]
+		var food = [null,0,0,false,'green'];
+		//[空对象，Y轴，X轴，是否存在]
+		var snake = [[null,0,0,false,'red']];
+		//蛇头的方向
+		var dir = 'right';
+		//键盘是否可以按下
+		var isKeyDown = true;
+		//游戏地图
+		var gameMap = document.createElement('div');
+		gameMap.style.width = wh * col + 'px';
+		gameMap.style.height = wh * row + 'px';
+		gameMap.style.border = '4px solid #000';
+		gameMap.style.margin = '0 auto';
+		gameMap.style.position = 'relative';
+		document.body.appendChild(gameMap);
+		
+		showFood();
+//		showSnake();
+		
+		
+		//让蛇移动起来
+		timer = setInterval(function(){
+			snakeMove();
+		},200);
+		
+		
+		document.addEventListener('keydown',function(e){
+			//键盘被按下
+			//38    上
+			//39    右
+			//40    下
+			//37    左
+			//防止短时间连续按键
+			if(isKeyDown === false){
+				return;
+			}
+			isKeyDown = false;
+			//判断按键
+			switch(e.keyCode){
+				case 38:
+					dir === 'down'?dir = 'down' : dir = 'top';
+					break;
+				case 39:
+					dir === 'left'?dir = 'left' : dir = 'right';
+					break;
+				case 40:
+					dir === 'top' ?dir = 'top' : dir = 'down';
+					break;
+				case 37:
+					dir === 'right'?dir = 'right' : dir = 'left';
+					break;
+			}
+		});
+		
+		
+		
+		
+		
+		function snakeMove(){
+			//移动蛇的身体
+			for(var i = 0; i < snake.length - 1; i++){
+				snake[i][1] = snake[i+1][1];
+				snake[i][2] = snake[i+1][2];
+			}
+			//移动蛇头
+			switch(dir){
+				case 'top':
+					snake[snake.length - 1][1]--;
+					break;
+				case 'right':
+					snake[snake.length - 1][2]++;
+					break;
+				case 'down':
+					snake[snake.length - 1][1]++;
+					break;
+				case 'left':
+					snake[snake.length - 1][2]--;
+					break;
+			}
+			isKeyDown = true;
+			//判断是否撞自己
+			for(var i = 0; i < snake.length - 1; i++){
+				if(snake[snake.length - 1][1] === snake[i][1]&&snake[snake.length - 1][2] === snake[i][2]){
+					//弹框
+					alert('撞自己了！');
+					clearInterval(timer);
+					return;
+				}
+			}
+			//判断是否撞墙
+			if(snake[snake.length - 1][1] < 0 || snake[snake.length - 1][1] > row - 1 || snake[snake.length - 1][2] < 0 || snake[snake.length - 1][2] > col - 1){
+				//弹框
+				alert('撞墙了！');
+				clearInterval(timer);
+				return;
+			}
+			//判断是否吃到食物并添加进蛇的身体
+			if(snake[snake.length - 1][1] === food[1] && snake[snake.length - 1][2] === food[2]){
+				gameMap.removeChild(food[0]);
+				snake.unshift([null,snake[0][1],snake[0][2],false,'green']);
+				showFood();
+			}
+			//显示蛇
+			showSnake();
+		}
+		function showSnake(){
+			//生成蛇
+			for(var i= 0; i < snake.length; i++){
+				//判断页面是否已经存在蛇的身体
+				if(snake[i][3] === false){
+					snake[i][0] = document.createElement('div');				
+					snake[i][0].style.width = snake[i][0].style.height = wh + 'px';
+					snake[i][0].style.backgroundColor = snake[i][4];
+					snake[i][0].style.position = 'absolute';
+					snake[i][3] = true;
+					gameMap.appendChild(snake[i][0]);
+					console.log('呵呵');
+				}
+				//确定位置
+				snake[i][0].style.top = snake[i][1] * wh + 'px';
+				snake[i][0].style.left = snake[i][2] * wh + 'px';
+			}
+		}
+		function showFood(){
+			//生成随机数
+			food[1] = Math.floor(Math.random()*row);
+			food[2] = Math.floor(Math.random()*col);
+			//不能随机在蛇的身体上
+			while(true){
+				var show = true;
+				for(var i= 0; i < snake.length; i++){
+					if(food[1] === snake[i][1] && food[2] === snake[i][2]){
+						food[1] = Math.floor(Math.random()*row);
+						food[2] = Math.floor(Math.random()*col);
+						show = false;
+						break;
+					}
+				}
+				if(show){
+					break;
+				}
+			}
+			//生成食物
+			food[0] = document.createElement('div');				
+			food[0].style.width = food[0].style.height = wh + 'px';
+			food[0].style.backgroundColor = food[4];
+			food[0].style.position = 'absolute';
+			food[0].style.top = food[1] * wh + 'px';
+			food[0].style.left = food[2] * wh + 'px';
+			gameMap.appendChild(food[0]);
+		}
+	</script>
+</html>
