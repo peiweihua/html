@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//面向过程   面条式代码
+		var w = 600,h = 600,row = 1,col = 1,s = 60,num = -1;
+		var gameMap = null;
+		showMap();
+		function showMap(){
+			//取所有子节点
+			var c = document.body.childNodes;
+			for(var i = c.length-1; i >= 0 ; i--){
+				//清除所有子节点
+				document.body.removeChild(c[i]);
+			}
+			/*创建一个div*/
+			gameMap = document.createElement('div');
+			//宽度
+			gameMap.style.width = w + 'px';
+			//高度
+			gameMap.style.height = h + 'px';
+			//边框
+			gameMap.style.border = '1px solid #f00';
+			//相对定位
+			gameMap.style.position = 'relative';
+			//显示到页面上去
+			document.body.appendChild(gameMap);
+			showBlock();
+			var timer = setInterval(function(){
+				s--;
+				if(s < 0){
+					alert('一共过了：'+num+'关！');
+					clearInterval(timer);
+					s = 60;
+					num = -1;
+					row = 1;
+					col = 1;
+					showMap();
+				}
+			},1000);
+		}
+		function showBlock(){
+			num++;
+			//随机红绿蓝   避免随机出黑色
+			var R = Math.floor(Math.random()*236)+20;
+			var G = Math.floor(Math.random()*236)+20;
+			var B = Math.floor(Math.random()*236)+20;
+			if(col < 10){
+				col++;
+				row++;
+			}
+			//取所有子节点
+			var c = gameMap.childNodes;
+			for(var i = c.length-1; i >= 0 ; i--){
+				//清除所有子节点
+				gameMap.removeChild(c[i]);
+			}
+			//取随机数整数
+			var t = Math.floor(Math.random()*(row*col));
+			//生成子节点
+			for(var i = 0; i < row; i++){
+				//js--es5不存在块级作用域
+				for(var j = 0; j < col; j++){
+					var childDiv = document.createElement('div');
+					//宽度
+					childDiv.style.width = w/col + 'px';
+					//高度
+					childDiv.style.height = h/row + 'px';
+					//边框
+					childDiv.style.border = '1px solid #000';
+					//背景颜色    
+					childDiv.style.backgroundColor = 'rgb(' + R + ',' + G + ',' + B + ')';
+					//绝对定位
+					childDiv.style.position = 'absolute';
+					//top值
+					childDiv.style.top = i*h/row + 'px';
+					//left值
+					childDiv.style.left = j*w/col + 'px';
+					//显示随机的颜色
+					if(i*col+j === t){
+						childDiv.style.backgroundColor = 'rgb(' + (R-2) + ',' + (G-2) + ',' + (B-2) + ')';
+						//添加监听事件--点击事件
+						childDiv.addEventListener('click',showBlock);
+					}
+					//显示到页面
+					gameMap.appendChild(childDiv);
+				}
+			}
+		}
+	</script>
+</html>
