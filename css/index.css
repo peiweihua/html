@@ -20,17 +20,19 @@ a {
 }
 
 .contaner .first-title {
-	font-family: "楷体","微软雅黑";
+	font-family: "楷体", "微软雅黑";
 	margin: 20px auto;
 	font-size: 20px;
 	text-shadow: 3px 3px 3px #1F6377;
 }
+
 .contaner .first-text {
-	font-family: "楷体","微软雅黑";
+	font-family: "楷体", "微软雅黑";
 	margin: 20px auto;
 	font-size: 1.2em;
 	color: #fff;
 }
+
 .photo {
 	width: 155px;
 	height: 155px;
@@ -60,4 +62,25 @@ a {
 	float: left;
 	margin-left: 20px;
 	color: #fff;
+}
+
+.display {
+	widows: 100%;
+	height: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-content: space-around;
+}
+
+.display .works {
+	width: 400px;
+	height: 200px;
+	border: 50px solid #000000;
+	border-image: url(../img/border-img.jpg) 80 80 stretch;
+}
+
+.display .works img {
+	width: 100%;
+	height: 100%;
 }
