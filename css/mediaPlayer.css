@@ -1,0 +1,270 @@
+/*初始化代码*/
+*{
+	margin: 0;,
+	padding: 0;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-o-user-select:none;
+	-webkit-overflow-scrolling: touch;
+}
+ul,ol{
+	list-style: none;
+}
+a{
+	color: #b30000;
+	text-decoration: none;
+}
+input{
+	/*设置背景颜色为透明色*/
+	background-color: transparent;
+	border: none;
+	/*去掉轮廓*/
+	outline: none;
+}
+/*公共样式*/
+html{
+	height: 100%;
+	font-size: 16px;
+	overflow-x: hidden;
+}
+body{
+	height: 100%;
+	font-family: "黑体";
+	background-color: #e2bc80;
+	overflow-x: hidden;
+}
+.float-l{
+	float: left;
+}
+.float-r{
+	float: right;
+}
+.ovf{
+	overflow: hidden;
+}
+.center{
+	width: 90%;
+	margin: 0 auto;
+}
+.header{
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	color: #fff;
+	background-color: #B30000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	/*容器阴影*/
+	box-shadow: 0 1px 10px 0px #999;
+}
+.back{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 5%;
+}
+.nav{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	background-color: #efefef;
+	color: #B30000;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 99;
+	/*容器阴影*/
+	box-shadow: 0 -1px 10px 0px #999;
+}
+.mainBody{
+	height: 100%;
+	position: relative;
+}
+.homePage,.playPage,.searchPage,.morePage{
+	overflow: hidden;
+	padding: 44px 0 60px 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.playPage,.searchPage,.morePage{
+	width: 0;
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+}
+/*页面样式----首页*/
+.nav-list>li{
+	width: 32%;
+}
+/*第一个li子元素*/
+.nav-list>li:nth-of-type(1){
+	margin-left: 2%;
+}
+.title{
+	padding: 6px 0;
+}
+.song-tj{
+	text-align: center;
+}
+.song-tj>li{
+	width: 32%;
+	margin-bottom: 10px;
+}
+.song-tj>li:nth-of-type(3n-1){
+	margin: 0 2%;
+}
+.song-tj a{
+	display: block;
+}
+.song-tj div{
+	font-size: 14px;
+	overflow: hidden;
+	/*强制文本一行*/
+	white-space: nowrap;
+	/*文本超出显示省略号*/
+	text-overflow: ellipsis;
+}
+/*列表页面*/
+.msg-box>li{
+	padding: 14px 0;
+	border-bottom: 1px solid #efefef;
+	position: relative;
+}
+.msg{
+	margin-left: 50px;
+}
+.msg-box .delBtn{
+	width: 40%;
+	height: 100%;
+	background-color: #f00;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.msg-box .delBtn>div{
+	width: 50%;
+	height: 100%;
+	color: #fff;
+	line-height: 68px;
+	text-align: center;
+}
+.msg-box .delBtn .no{
+	background-color: #ddd;
+}
+.msg-box .delBtn .yes{
+	background-color: #B30000;
+}
+/*搜索框*/
+.search-box{
+	text-align: center;
+	padding: 10px 0;
+}
+.search-box>input[type="text"]{
+	box-sizing: border-box;
+	vertical-align: middle;
+	width: 70%;
+	height: 30px;
+	line-height: 30px;
+	border: 2px solid #b30000;
+}
+.search-box>input[type="button"]{
+	vertical-align: middle;
+	width: 30%;
+	height: 30px;
+	background-color: #b30000;
+	color: #fff;
+	border: 2px solid #b30000;
+}
+/*播放页面*/
+.playPage .controlBox{
+	background-color: #fff;
+	border-radius: 6px;
+	padding: 10px;
+	margin-top: 6px;
+	box-shadow: 0 0 10px 1px #333;
+}
+.playPage .controlBox .songCover{
+	width: 40px;
+	height: 40px;
+	background-color: #ddd;
+	/*background-image: url(https://www.baidu.com/img/baidu_jgylogo3.gif);*/
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.playPage .controlBox .out{
+	width: 100%;
+	height: 2px;
+	background-color: #ccc;
+}
+.playPage .controlBox .inner{
+	width: 30%;
+	height: 2px;
+	background-color: #B30000;
+}
+.playPage .playBtn{
+	text-align: center;
+	margin-top: 6px;
+}
+.playPage .playBtn>button{
+	border: none;
+	outline: none;
+	background-color: #B30000;
+	padding: 10px 20px;
+	color: #fff;
+	border-radius: 2px;
+}
+.playPage .playBtn>button:nth-of-type(3n-1){
+	margin: 0 2px;
+}
+.playPage>h3{
+	text-align: center;
+	line-height: 70vh;
+	color: #666;
+}
+/*删除浮层*/
+.del-box{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,.6);
+	z-index: 998;
+}
+.hint-box{
+	width: 80%;
+	padding-top: 10px;
+	background-color: #fff;
+	border-radius: 6px;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.hint-box>h4{
+	text-align: center;
+}
+.hint-box>.no{
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+	background-color: #ddd;
+}
+.hint-box>.yes{
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+	background-color: #B30000;
+	margin: 10px 0 0 0;
+}

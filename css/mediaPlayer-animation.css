@@ -1,0 +1,149 @@
+/*页面从右侧进来*/
+.pageFromRight{
+	-webkit-animation: pageFromRight .4s ease-out forwards; 
+	animation: pageFromRight .4s ease-out forwards; 
+}
+
+@-webkit-keyframes pageFromRight{
+	from{
+		width: 100%;
+		display: block;
+		-webkit-transform: translateX(100%);
+	}
+	to{
+		width: 100%;
+		display: block;
+		-webkit-transform: translateX(0%);
+	}
+}
+
+@keyframes pageFromRight{
+	from{
+		width: 100%;
+		display: block;
+		transform: translateX(100%);
+	}
+	to{
+		width: 100%;
+		display: block;
+		transform: translateX(0%);
+	}
+}
+
+/*页面到左侧去*/
+.pageToLeft{
+	-webkit-animation: pageToLeft .4s ease-out forwards; 
+	animation: pageToLeft .4s ease-out forwards; 
+}
+
+@-webkit-keyframes pageToLeft{
+	0%{
+		width: 100%;
+		display: block;
+		-webkit-transform: translateX(0%);
+	}
+	99%{
+		width: 100%;
+		display: block;
+	}
+	100%{
+		width: 0%;
+		display: none;
+		-webkit-transform: translateX(-100%);
+	}
+}
+
+@keyframes pageToLeft{
+	0%{
+		width: 100%;
+		display: block;
+		transform: translateX(0%);
+	}
+	99%{
+		width: 100%;
+		display: block;
+	}
+	100%{
+		width: 0%;
+		display: none;
+		transform: translateX(-100%);
+	}
+}
+
+
+/*==================================*/
+
+
+
+/*页面从左侧进来*/
+.pageFromLeft{
+	-webkit-animation: pageFromLeft .4s ease-out forwards; 
+	animation: pageFromLeft .4s ease-out forwards; 
+}
+
+@-webkit-keyframes pageFromLeft{
+	from{
+		width: 100%;
+		display: block;
+		-webkit-transform: translateX(-100%);
+	}
+	to{
+		width: 100%;
+		display: block;
+		-webkit-transform: translateX(0%);
+	}
+}
+
+@keyframes pageFromLeft{
+	from{
+		width: 100%;
+		display: block;
+		transform: translateX(-100%);
+	}
+	to{
+		width: 100%;
+		display: block;
+		transform: translateX(0%);
+	}
+}
+
+/*页面到右侧去*/
+.pageToRight{
+	-webkit-animation: pageToRight .4s ease-out forwards; 
+	animation: pageToRight .4s ease-out forwards; 
+}
+
+@-webkit-keyframes pageToRight{
+	0%{
+		width: 100%;
+		display: block;
+		-webkit-transform: translateX(0%);
+	}
+	99%{
+		width: 100%;
+		display: block;
+	}
+	100%{
+		width: 0%;
+		display: none;
+		-webkit-transform: translateX(100%);
+	}
+}
+
+@keyframes pageToRight{
+	0%{
+		width: 100%;
+		display: block;
+		transform: translateX(0%);
+	}
+	99%{
+		width: 100%;
+		display: block;
+	}
+	100%{
+		width: 0%;
+		transform: translateX(100%);
+		display: none;
+	}
+}
+
