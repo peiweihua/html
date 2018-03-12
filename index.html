@@ -23,7 +23,7 @@
 					<div class="first-nav-wrap animated fadeInLeft">
 						<ul class="first-nav">
 							<li class="first-nav-item">
-								<a href="">工作</a>
+								<a href="#">作品展示</a>
 							</li>
 							<li class="first-nav-item">
 								<a href="">关于</a>
@@ -41,7 +41,27 @@
 					</p>
 				</div>
 			</div>
-			<div class="section">第二屏</div>
+			<div class="section">
+				<div id="display" class="display">
+					<div class="works">
+						<a href="snake.html"><img src="img/snake.jpg" alt="" /></a>
+					</div>
+					<div class="works">
+						<a href="drawBoard.html"><img src="img/draw-board.jpg" alt="" /></a>
+					</div>
+					<div class="works">
+						<a href="lookColor.html"><img src="img/lookcolor.jpg" alt="" /></a>
+					</div>
+					<div class="works">
+						<a href="linkGame.html"><img src="img/linkGame.jpg" alt="" /></a>
+					</div>
+					<div class="works animated">
+						<a href="mediaPlayer.html"><img src="img/media-player.jpg" alt="" /></a>
+					</div>
+					<div class="works">
+					</div>
+				</div>
+			</div>
 			<div class="section">
 				<div class="slide">1</div>
 				<div class="slide">2</div>
@@ -59,7 +79,7 @@
 					navigationPosition: 'right', //小圆点左右
 					loopBottom: true, //是否循环
 					afterLoad: function(anchorLink, index) {
-						console.log(anchorLink, index)
+//						console.log(anchorLink, index)
 					}, //滚动到某一屏后的回调函数，接受anchorLink和index两个参数，anchorLink是锚链接的名称，index是序号从一开始，
 
 				})
