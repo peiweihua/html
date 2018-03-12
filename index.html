@@ -3,49 +3,68 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>简历</title>
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<meta name="viewport" content="width=device-width,inital-scale=1.0" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="lib/fullPage.js-master/dist/jquery.fullpage.css" />
+		<script src="lib/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="lib/fullPage.js-master/dist/jquery.fullpage.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="lib/animate.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
 	</head>
 
-	<body class="content">
-		<div class="header">
-			<div class="photo">
-				<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2003988139,3010807873&fm=117&gp=0.jpg" />
+	<body>
+		<div id="fullpage">
+			<div class="section">
+				<div class="contaner">
+					<div class="photo animated fadeInDown">
+						<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2003988139,3010807873&fm=117&gp=0.jpg" />
+					</div>
+					<p class="firs-text animated fadeInRight">枪在手，向前走，前端路上不回头</p>
+					<div class="first-nav-wrap animated fadeInLeft">
+						<ul class="first-nav">
+							<li class="first-nav-item">
+								<a href="">工作</a>
+							</li>
+							<li class="first-nav-item">
+								<a href="">关于</a>
+							</li>
+							<li class="first-nav-item">
+								<a href="https://weibo.com/">微博</a>
+							</li>
+							<li class="first-nav-item">
+								<a href="">联系</a>
+							</li>
+						</ul>
+					</div>
+					<h3 class="first-title animated rubberBand">嗨，我是裴纬华！</h3>
+					<p class="first-text animated fadeInUp">大家好。我是裴纬华，由H5编码的一个英俊个人主页。 一个真正简单的主页，想要展示他们的工作与可爱和干净的风格。 请考虑关注我的主页，以获取我最新的消息。 像往常一样，你可以在任何项目中使用我主页里的代码。与你的朋友分享
+					</p>
+				</div>
 			</div>
-			<p>枪在手，向前走，前端路上不回头</p>
-			<ul>
-				<li class="float-l"><a href="">工作</a></li>
-				<li class="float-l"><a href="">关于</a></li>
-				<li class="float-l"><a href="">博客</a></li>
-				<li class="float-l"><a href="">联系</a></li>
-			</ul>
+			<div class="section">第二屏</div>
+			<div class="section">
+				<div class="slide">1</div>
+				<div class="slide">2</div>
+				<div class="slide">3</div>
+				<div class="slide">4</div>
+			</div>
+			<div class="section">第四屏</div>
 		</div>
-		<div class="mainBody">
-			<h3>嗨，我是裴纬华！</h3>
-			<p>大家好。我是裴纬华，由H5编码的一个英俊个人主页。 一个真正简单的主页，想要展示他们的工作与可爱和干净的风格。 请考虑关注我的主页，以获取我最新的消息。 像往常一样，你可以在任何项目中使用我主页里的代码。与你的朋友分享
-			</p>
-			<ul>
-				<li>
-					<a href="http://search.2144.cn/index.php?keywords=%E6%A4%8D%E7%89%A9%E5%A4%A7%E6%88%98%E5%83%B5%E5%B0%B8"><img style="width: 480px;height: 320px;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504569952&di=bb608dd7051f960e6b3d089a10de93df&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.91danji.com%2Fupload%2F20121128%2F20121128154854808.jpg"></a>
-				</li>
-				<li>
-					<a href="snake.html"><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=930360927,209525675&fm=26&gp=0.jpg>"></a>
+		<script type="text/javascript">
+			$(function() {
+				$('#fullpage').fullpage({
+					sectionsColor: ['#1abc9c', 'lightgreen', 'green', 'white'], //每屏的颜色
+					navigation: true, //是否显示小圆点
+					navigationTooltips: ['Home', '2', '3', '4'], //鼠标放在小圆点的提示
+					navigationPosition: 'right', //小圆点左右
+					loopBottom: true, //是否循环
+					afterLoad: function(anchorLink, index) {
+						console.log(anchorLink, index)
+					}, //滚动到某一屏后的回调函数，接受anchorLink和index两个参数，anchorLink是锚链接的名称，index是序号从一开始，
 
-				</li>
-				<li>
-					<a href="drawingBoard.html"><img style="width: 480px;height: 320px;" src="img/64380cd7912397ddc56251295282b2b7d0a28780.jpg" /></a>
-				</li>
-				
-			</ul>
-		</div>
-
-		<div class="footer ">
-			<p>GitHub个人主页：github.io.peiweihua/html/</p>
-			<p>手机： 15210990953</p>
-			<p>邮箱：970396358@qq.com</p>
-			<p>地址：石景山首钢工学院</p>
-
-		</div>
+				})
+			});
+		</script>
 	</body>
 
 </html>
