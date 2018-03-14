@@ -3,6 +3,13 @@
 	margin: 0;
 }
 
+body {
+	font 12px/180% Arial,
+	Helvetica,
+	sans-serif,
+	"新宋体";
+}
+
 ul,
 li {
 	list-style: none;
@@ -10,6 +17,10 @@ li {
 
 a {
 	text-decoration: none;
+}
+
+img {
+	border: none;
 }
 
 .contaner {
@@ -29,7 +40,7 @@ a {
 .contaner .first-text {
 	font-family: "楷体", "微软雅黑";
 	margin: 20px auto;
-	font-size: 1.2em;
+	font-size: 0.2em;
 	color: #fff;
 }
 
@@ -55,6 +66,7 @@ a {
 	margin: 20px 0;
 	display: inline-block;
 	overflow: hidden;
+	font-size: 0.2em;
 	transform: translateX(-20px);
 }
 
@@ -83,4 +95,85 @@ a {
 .display .works img {
 	width: 100%;
 	height: 100%;
+}
+
+.third-wrap1 {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-image: url(../img/rjch1.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.third-wrap2 {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-image: url(../img/rjch2.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.third-wrap3 {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-image: url(../img/rjch3.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.third-wrap4 {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-image: url(../img/rjch4.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.txt-rjch {
+	width: 35%;
+	overflow: hidden;
+	padding-left: 10%;
+	padding-top: 10%;
+	box-sizing: border-box;
+	font-family: "楷体", "微软雅黑";
+	letter-spacing: 2px;
+}
+
+.txt-rjch p {
+	width: 33%;
+	font-size: 0.28rem;
+	writing-mode: tb;
+	float: left;
+	box-sizing: border-box;
+	color: #333333;
+	font-weight: bolder;
+	text-shadow: 2px 2px 5px lightgoldenrodyellow;
+}
+
+.txt-rjch .p2 {
+	font-family: "微软雅黑";
+}
+
+.txt-rjch .p3 {
+	text-align: center;
+	padding-top: 30%;
+	font-size: 0.25rem;
+}
+
+.txt-content {
+	position: absolute;
+	
+	left: 50%;
+	top: 50%;
+	transform: translate(-20%, -50%);
+	font-size: 0.3rem;
+	line-height: 50px;
+	font-weight: bolder;
+	letter-spacing: 4px;
+	font-family: '楷体', "微软雅黑";
+	text-align: start;
 }
