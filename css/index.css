@@ -170,7 +170,8 @@ img {
 	top: 50%;
 	transform: translate(-20%, -50%);
 	font-size: 0.3rem;
-	line-height: 50px;
+	line-height: 0.35rem;
+	color:white;
 	font-weight: bolder;
 	letter-spacing: 4px;
 	font-family: '楷体', "微软雅黑";
