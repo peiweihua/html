@@ -4,7 +4,7 @@
 }
 
 body {
-	font 12px/180% Arial,
+	font-size: 0.28rem;
 	Helvetica,
 	sans-serif,
 	"新宋体";
@@ -33,14 +33,14 @@ img {
 .contaner .first-title {
 	font-family: "楷体", "微软雅黑";
 	margin: 20px auto;
-	font-size: 20px;
+	font-size: 0.2rem;
 	text-shadow: 3px 3px 3px #1F6377;
 }
 
 .contaner .first-text {
 	font-family: "楷体", "微软雅黑";
 	margin: 20px auto;
-	font-size: 0.2em;
+	font-size: 0.25rem;
 	color: #fff;
 }
 
@@ -59,14 +59,14 @@ img {
 .contaner>p {
 	margin: 20px auto;
 	color: #fff;
-	max-width: 500px;
+	width: 50%;
 }
 
 .contaner .first-nav-wrap .first-nav {
 	margin: 20px 0;
 	display: inline-block;
 	overflow: hidden;
-	font-size: 0.2em;
+	font-size: 0.2rem;
 	transform: translateX(-20px);
 }
 
@@ -93,11 +93,6 @@ img {
 }
 
 .display .works img {
-	width: 100%;
-	height: 100%;
-}
-
-#third-slide {
 	width: 100%;
 	height: 100%;
 }
