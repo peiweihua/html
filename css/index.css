@@ -87,7 +87,7 @@ img {
 
 .display .works {
 	width: 400px;
-	height: 200px;
+	height: 250px;
 	border: 50px solid #000000;
 	border-image: url(../img/border-img.jpg) 80 80 stretch;
 }
