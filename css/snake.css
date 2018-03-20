@@ -1,0 +1,103 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+html,body{
+	width: 100%;
+	height: 970px;
+}
+.startPage {
+	position: fixed;
+	z-index: 999;
+	background-image: url(../img/startGame.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	text-align: center;
+	width: 250px;
+	height: 350px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.startPage .startBtn {
+	margin-top: 180px;
+	background: yellow;
+	color: white;
+	font-weight: bolder;
+	border-radius: 20px;
+	border: none;
+	width: 60%;
+	height: 50px;
+	font-size: 28px;
+	font-family: "楷体", "微软雅黑";
+}
+
+.wrap {
+	width: 100%;
+	height: 100%;
+	background-color: lightgreen;
+	text-align: center;
+}
+.head{
+	background-image: url(../img/snakeHead.png);
+	background-size: 120% 120%;
+}
+.body{
+	background-image: url(../img/snakeBody.png);
+	background-size: 100% 100%;
+}
+.wrap .score {
+	width: 200px;
+	height: 50px;
+	font-size: 28px;
+	font-weight: bolder;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.map {
+	width: 60%;
+	height: 80%;
+	position: relative;
+	border: 1px solid #FFFF00;
+	margin: 0 auto;
+}
+.food{
+	background-image: url(../img/food.png);
+	background-size: 100% 100%;
+}
+.lose {
+	display: none;
+	position: fixed;
+	background-image: url(../img/startGame.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	text-align: center;
+	width: 250px;
+	height: 350px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 28px;
+	font-family: "楷体", "微软雅黑";
+	font-weight: bolder;
+}
+
+.lose .restartBtn {
+	margin-top: 50px;
+	color: white;
+	background: yellow;
+	border-radius: 20px;
+	font-size: 28px;
+	border: none;
+	color: white;
+	width: 60%;
+	height: 50px;
+}
+.lose .close {
+	margin-top: 10%;
+	color: red;
+	border-radius: 20px;
+	border: none;
+}
