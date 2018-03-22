@@ -76,7 +76,8 @@
 				background-color: #00f;
 				color: #fff;
 			}
-			input:checked+label{
+			
+			input:checked+label {
 				background-color: #000;
 				color: #fff;
 			}
@@ -110,64 +111,65 @@
 
 	</body>
 	<script type="text/javascript">
-	(function(document){
-		var canvas = document.getElementById('draw');
-		var ctx = canvas.getContext('2d');
-		var tablet = new Tablet({
-			canvas:canvas,
-			ctx:ctx,
-			size:10,
-			color:'#000'
-		});
-		canvas.addEventListener('mousedown',function(e){
-			tablet.isDown = true;
-			ctx.beginPath();
-		});
-		canvas.addEventListener('mousemove',function(e){
-			tablet.drawLine(e.offsetX,e.offsetY);
-		});
-		canvas.addEventListener('mouseup',function(e){
-			tablet.isDown = false;
-		});
-		document.addEventListener('mouseup',function(e){
-			if(e.target.nodeName!=='CANVAS'){
-				ctx.closePath();
+		(function(document) {
+			var canvas = document.getElementById('draw');
+			var ctx = canvas.getContext('2d');
+			var tablet = new Tablet({
+				canvas: canvas,
+				ctx: ctx,
+				size: 10,
+				color: '#000'
+			});
+			canvas.addEventListener('mousedown', function(e) {
+				tablet.isDown = true;
+				ctx.beginPath();
+			});
+			canvas.addEventListener('mousemove', function(e) {
+				tablet.drawLine(e.offsetX, e.offsetY);
+			});
+			canvas.addEventListener('mouseup', function(e) {
 				tablet.isDown = false;
-			}
-		});
-		document.getElementById('color').addEventListener('click',function(e){
-			if(e.target.name === 'color'){
-				tablet.color = e.target.value;
-			}
-		});
-		document.getElementById('size').addEventListener('click',function(e){
-			if(e.target.name === 'size'){
-				tablet.lineWidth = e.target.value;
-			}
-		});
-		function Tablet(obj){
-			if(!obj.canvas){
-				alert('画板没有传进来！');
-				return;
-			}
-			this.canvas = obj.canvas;
-			this.ctx = obj.ctx||obj.canvas.getContext('2d');
-			this.lineWidth = obj.size ||10;
-			this.color =obj.color || '#000';
-			this.isDown = obj.Down||false;
-			this.drawLine = function(x,y){
-				if(this.isDown){
-					this.ctx.lineWidth = this.lineWidth;
-					this.ctx.strokeStyle = this.color;
-					this.ctx.lineCap = 'round';
-					this.ctx.lineJoin = 'round';
-					this.ctx.lineTo(x,y);
-					this.ctx.stroke();
-					
+			});
+			document.addEventListener('mouseup', function(e) {
+				if(e.target.nodeName !== 'CANVAS') {
+					ctx.closePath();
+					tablet.isDown = false;
+				}
+			});
+			document.getElementById('color').addEventListener('click', function(e) {
+				if(e.target.name === 'color') {
+					tablet.color = e.target.value;
+				}
+			});
+			document.getElementById('size').addEventListener('click', function(e) {
+				if(e.target.name === 'size') {
+					tablet.lineWidth = e.target.value;
+				}
+			});
+
+			function Tablet(obj) {
+				if(!obj.canvas) {
+					alert('画板没有传进来！');
+					return;
+				}
+				this.canvas = obj.canvas;
+				this.ctx = obj.ctx || obj.canvas.getContext('2d');
+				this.lineWidth = obj.size || 10;
+				this.color = obj.color || '#000';
+				this.isDown = obj.Down || false;
+				this.drawLine = function(x, y) {
+					if(this.isDown) {
+						this.ctx.lineWidth = this.lineWidth;
+						this.ctx.strokeStyle = this.color;
+						this.ctx.lineCap = 'round';
+						this.ctx.lineJoin = 'round';
+						this.ctx.lineTo(x, y);
+						this.ctx.stroke();
+
+					}
 				}
 			}
-		}
-	})(document);
+		})(document);
 	</script>
 
 </html>
