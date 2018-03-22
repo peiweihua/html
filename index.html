@@ -7,7 +7,7 @@
 		<title></title>
 		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="lib/fullPage.js-master/dist/jquery.fullpage.css" />
-		<script src="lib/jquery-1.8.3.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
 		<script src="lib/fullPage.js-master/vendors/scrolloverflow.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="lib/fullPage.js-master/dist/jquery.fullpage.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css" />
@@ -16,14 +16,75 @@
 	</head>
 
 	<body>
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+					<a class="navbar-brand" href="#">PeiWeiHua</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#home">Home</a>
+						</li>
+						<li>
+							<a href="#work">Work</a>
+						</li>
+						<li>
+							<a href="#life">Life</a>
+						</li>
+						<li class="Contact">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a>QQ：970396358</a>
+								</li>
+								<li>
+									<a>邮箱：970396358@qq.com</a>
+								</li>
+								<li>
+									<a href="#contact">More</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li class="dropdown-header">Nav header</li>
+								<li>
+									<a href="#">Separated link</a>
+								</li>
+								<li>
+									<a href="#">One more separated link</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#">Default</a>
+						</li>
+						<li>
+							<a href="#">Static top</a>
+						</li>
+						<li class="active">
+							<a href="#">Fixed top <span class="sr-only">(current)</span></a>
+						</li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+		</nav>
 		<div id="fullpage">
-			<div class="section">
+			<div id="home" class="section">
 				<div class="contaner">
 					<div amt="animated fadeInDown" class="photo animated fadeInDown">
 						<img src="img/photo.jpg" />
 					</div>
 					<p amt="animated fadeInRight" class="first-text animated fadeInRight">枪在手，向前走，前端路上不回头</p>
-					<div amt="animated fadeInLeft" class="first-nav-wrap animated fadeInLeft">
+					<!--<div amt="animated fadeInLeft" class="first-nav-wrap animated fadeInLeft">
 						<ul class="first-nav">
 							<li class="first-nav-item">
 								<a href="#">作品展示</a>
@@ -38,13 +99,13 @@
 								<a href="">联系</a>
 							</li>
 						</ul>
-					</div>
+					</div>-->
 					<h3 amt=" animated rubberBand" class="first-title animated rubberBand">嗨，我是裴纬华！</h3>
 					<p amt=" animated fadeInUp" class="first-text animated fadeInUp">大家好。我是裴纬华，由H5编码的一个英俊个人主页。 一个真正简单的主页，想要展示他们的工作与可爱和干净的风格。 请考虑关注我的主页，以获取我最新的消息。 像往常一样，你可以在任何项目中使用我主页里的代码。与你的朋友分享
 					</p>
 				</div>
 			</div>
-			<div class="section">
+			<div id="work" class="section">
 				<div id="display" class="display">
 					<div amt="animated zoomIn" class="works">
 						<a href="snake.html"><img src="img/snake.jpg" alt="" /></a>
@@ -62,11 +123,29 @@
 						<a href="mediaPlayer.html"><img src="img/media-player.jpg" alt="" /></a>
 					</div>
 					<div amt="animated zoomIn" class="works">
+						<a href="snake.html"><img src="img/snake.jpg" alt="" /></a>
 					</div>
-
+					<div amt="animated zoomIn" class="works">
+						<a href="drawBoard.html"><img src="img/draw-board.jpg" alt="" /></a>
+					</div>
+					<div amt="animated zoomIn" class="works">
+						<a href="lookColor.html"><img src="img/lookcolor.jpg" alt="" /></a>
+					</div>
+					<div amt="animated zoomIn" class="works">
+						<a href="linkGame.html"><img src="img/linkGame.jpg" alt="" /></a>
+					</div>
+					<div amt="animated zoomIn" class="works animated">
+						<a href="mediaPlayer.html"><img src="img/media-player.jpg" alt="" /></a>
+					</div>
+					<div amt="animated zoomIn" class="works animated">
+						<a href="mediaPlayer.html"><img src="img/media-player.jpg" alt="" /></a>
+					</div>
+					<div amt="animated zoomIn" class="works animated">
+						<a href="mediaPlayer.html"><img src="img/media-player.jpg" alt="" /></a>
+					</div>
 				</div>
 			</div>
-			<div class="section">
+			<div id="life" class="section">
 				<div class="slide" id="third-slide">
 					<div class="third-wrap1">
 						<div class="txt-rjch">
@@ -136,20 +215,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="section">
+			<div id="contact" class="section">
 				<section id="contact">
 					<div class="lvjing">
 						<div class="container">
 							<div class="row">
 								<div amt="animated fadeInLeft" class="col-md-6  wow fadeInLeft">
 									<h2><span class="glyphicon glyphicon-send"></span>&nbsp; 联系我 </h2>
-									<p>You are the css to my html.<br/>
-									“我的生活索然无味，直到遇见了你。”为爱好而学，为看好这个行业而学为一种“技术人员”的自尊而学.<br/>
-									记录生活的瞬间,分享学习的心得,感悟生活,留住感动,静静寻觅生活的美好
+									<p>记录生活的瞬间,分享学习的心得,感悟生活,留住感动,静静寻觅生活的美好
 									</p>
-				                  <address>
+									<address>
                                      <p><span class="glyphicon glyphicon-home"></span>&nbsp; 地址: 天涯海角</p>
-                                     <p><span class="glyphicon glyphicon-phone-alt"></span> &nbsp;联系电话：15210990953</p>
+                                     <p><span class="glyphicon glyphicon-phone-alt"></span> &nbsp;联系电话：110-110110110</p>
                                      <p><span class="glyphicon glyphicon-envelope"></span> &nbsp;邮箱:970396358@qq.com</p>
                                  </address>
 								</div>
@@ -178,19 +255,22 @@
 				</section>
 				<!--contact-->
 
-
 			</div>
 
 		</div>
+		<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+		<!--<script src="lib/jquery.singlePageNav.min.js"></script>-->
+		<!--<script src="lib/wow.min.js"></script>-->
 		<script type="text/javascript">
 			$(function() {
 				$('#fullpage').fullpage({
 					sectionsColor: ['#1abc9c', 'lightgreen', 'green', '#1B6D85'], //每屏的颜色
 					navigation: true, //是否显示小圆点
-					navigationTooltips: ['Home', '2', '3', '4'], //鼠标放在小圆点的提示
+					navigationTooltips: ['Home', 'Work', 'Life', 'Contact'], //鼠标放在小圆点的提示
 					navigationPosition: 'right', //小圆点左右
 					scrollOverflow: true,
-					loopBottom: true, //是否循环
+					//					controlArrows: false; //取消slide左右的箭头按钮
+					//					loopBottom: true, //是否循环
 					//					afterLoad: function(anchorLink, index) {
 					////						console.log(anchorLink, index)
 					//					}, //滚动到某一屏后的回调函数，接受anchorLink和index两个参数，anchorLink是锚链接的名称，index是序号从一开始，
@@ -206,7 +286,21 @@
 							$(elem).addClass($(elem).attr('amt'));
 						})
 					}
-				})
+				});
+				setInterval(function() {
+					$.fn.fullpage.moveSlideRight();
+				}, 2000)
+
+				//				/*导航跳转效果插件*/
+				//				$('.nav').singlePageNav({
+				//					offset: 70
+				//				});
+				/*小屏幕导航点击关闭菜单*/
+				$('.navbar-collapse a').click(function() {
+					$('.navbar-collapse').collapse('hide');
+				});
+				//				new WOW().init();
+
 			});
 		</script>
 	</body>
